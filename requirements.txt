@@ -1,0 +1,12 @@
+MASS
+data.table
+doParallel
+ggplot2
+latex2exp
+moments
+patchwork
+profvis
+sandwich
+scales
+stringr
+yaml

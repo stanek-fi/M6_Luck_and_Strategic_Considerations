@@ -1,0 +1,482 @@
+schema: '2.0'
+stages:
+  main:
+    cmd: Rscript src\main.R
+    deps:
+    - path: src\helpers
+      md5: 3cd6d0138c5aaf2ec2f9bbcbe7cb97ba.dir
+      size: 1181
+      nfiles: 5
+    - path: src\main.R
+      md5: c221773816928ec7dbe2a88282d64e40
+      size: 1609
+    params:
+      par.yaml:
+        days_per_round: 20
+        participants: 11
+        r_N: 100
+        r_mean: 0.0004
+        r_rho: 0.0002
+        r_var: 0.0004
+        repetitions: 100
+        rounds: 12
+        seed: 1
+        x_prob: 0.9
+    outs:
+    - path: outputs/metrics/metrics.csv
+      md5: 6ae425d861ff8fcbaf9e67cf483d309c
+      size: 53
+    - path: outputs/metrics/metrics.yaml
+      md5: 5ea83f5e0fc07ac4e7c90c7f16adb84e
+      size: 36
+  estimate_coefficients:
+    cmd: Rscript src\estimate_coefficients.R
+    deps:
+    - path: data\processed
+      hash: md5
+      md5: bb4dab214adc2a4f2c6065bd9301e726.dir
+      size: 1277654
+      nfiles: 5
+    - path: src\estimate_coefficients.R
+      hash: md5
+      md5: 29914e1aa292d9c405a96f31ee1126b3
+      size: 4158
+    - path: src\helpers
+      hash: md5
+      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
+      size: 5669
+      nfiles: 7
+    params:
+      par.yaml:
+        participants_num_fixed: 163
+        rep_estimate_coefficients: 100
+        returns_num_fixed: 100
+        rounds_num_fixed: 12
+    outs:
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+  compute_strategy:
+    cmd: Rscript src\compute_strategy.R
+    deps:
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\compute_strategy.R
+      hash: md5
+      md5: 08ff13d20e1e286021f6034aa049d393
+      size: 7434
+    - path: src\helpers
+      hash: md5
+      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
+      size: 5669
+      nfiles: 7
+    params:
+      par.yaml:
+        days_per_round: 20
+        rep_compute_strategy: 5000
+        returns_mean: 0.00037
+        returns_num: 100
+        rounds_num: 12
+    outs:
+    - path: models\strategy_q_1.RDS
+      hash: md5
+      md5: 808b7cb0405846facc5e3777869aee14
+      size: 4495
+    - path: models\strategy_q_20.RDS
+      hash: md5
+      md5: 59c372594e572faaec41120cbfdfc43f
+      size: 4502
+  simulate_competition:
+    cmd: Rscript src\simulate_competition.R
+    deps:
+    - path: models\strategy.RDS
+      md5: 759255567e281029135b234f687c46b1
+      size: 2464
+    - path: outputs\metrics\coefficients.yaml
+      md5: 230da52858c461c630751c6c5bef10fc
+      size: 80
+    - path: src\helpers
+      md5: 3356de9a2d5834db3cda89fd9ad9f7f6.dir
+      size: 2633
+      nfiles: 6
+    - path: src\simulate_competition.R
+      md5: 235ed4f85d643bb4102c143319c577c9
+      size: 4523
+    params:
+      par.yaml:
+        R_compute_strategy: 100
+        R_estimate_coefficients: 100
+        R_leaderboard_comparison: 10000
+        R_position_effects: 10000
+        R_simulate_competition: 100000
+        days_per_round: 20
+        participants_N: 163
+        returns_N: 100
+        returns_lambda: 0.0003
+        returns_mean: 0.00037
+        rounds: 12
+        seed: 1
+    outs:
+    - path: outputs/metrics/metrics.yaml
+      md5: 00d605ce742f053cc6917f55d087060c
+      size: 345
+  auxiliary:
+    cmd:
+    - Rscript src\auxiliary\leaderboard_comparison.R
+    - Rscript src\auxiliary\strategy_diagram.R
+    - Rscript src\auxiliary\scaling_effects.R
+    - Rscript src\auxiliary\position_effects.R
+    - Rscript src\auxiliary\competition_statistics_simulated.R
+    - Rscript src\auxiliary\competition_statistics_bootstrapped.R
+    - Rscript src\auxiliary\test_IR_level_table.R
+    deps:
+    - path: data\processed
+      hash: md5
+      md5: bb4dab214adc2a4f2c6065bd9301e726.dir
+      size: 1277654
+      nfiles: 5
+    - path: models
+      hash: md5
+      md5: b40e6bb4d5a0bdc71938e33677bec51e.dir
+      size: 12672239
+      nfiles: 10
+    - path: outputs\metrics
+      hash: md5
+      md5: 4895ad9540b4bdfac9e84ef292ef3185.dir
+      size: 647
+      nfiles: 3
+    - path: src
+      hash: md5
+      md5: 8c9c0ee8f028d5107c596688cdf4926a.dir
+      size: 61556
+      nfiles: 22
+    params:
+      par.yaml:
+        days_per_round: 20
+        days_per_round_fixed: 20
+        participants_num: 163
+        participants_num_fixed: 163
+        rep_compute_strategy: 5000
+        rep_estimate_coefficients: 100
+        rep_leaderboard_comparison: 10000
+        rep_position_effects: 10000
+        rep_simulate_competition: 100000
+        returns_lambda:
+        - 0
+        - 0.0001
+        - 0.0003
+        - 0.001
+        returns_mean: 0.00037
+        returns_num: 100
+        returns_num_fixed: 100
+        rounds_num: 12
+        rounds_num_fixed: 12
+        seed: 1
+    outs:
+    - path: outputs\plots\position_effects.png
+      hash: md5
+      md5: 2baee533a650a369f2ca1605ef87b2b9
+      size: 109450
+    - path: outputs\plots\rank_histogram_bootstrapped.png
+      hash: md5
+      md5: 9dea15482e33ce2efc3dd7f95c22642b
+      size: 56937
+    - path: outputs\plots\rank_histogram_simulated.png
+      hash: md5
+      md5: 8100e28bee49c7e4a21bf1b90d506419
+      size: 63385
+    - path: outputs\plots\scaling_effects.png
+      hash: md5
+      md5: 3bbc52baa79f0ec46080cbbf748da464
+      size: 260921
+    - path: outputs\plots\strategy_diagram_q_1.png
+      hash: md5
+      md5: d511496d7f981df3375c661eeb2f2375
+      size: 627422
+    - path: outputs\plots\strategy_diagram_q_20.png
+      hash: md5
+      md5: 6e748ca89b98c81f86d18a1b4f7b5482
+      size: 624274
+    - path: outputs\tables\leaderboard_comparison.csv
+      hash: md5
+      md5: 39ac880b722cdfdaaf7a78ee0b41787e
+      size: 1164
+    - path: outputs\tables\state_table_bootstrapped.csv
+      hash: md5
+      md5: 48c707996b7317ba1222cc6d26a484cb
+      size: 322
+    - path: outputs\tables\state_table_simulated_rank_optimization.csv
+      hash: md5
+      md5: 9881c06ac23cf74180773d0c739c6e99
+      size: 491
+    - path: outputs\tables\state_table_simulated_tangency.csv
+      hash: md5
+      md5: 58702ac33761c32855662dcc3e067e3e
+      size: 430
+    - path: outputs\tables\test_IR_level_table_asy.csv
+      hash: md5
+      md5: 852529c9414d6b7b0b211255a79d6a02
+      size: 99
+    - path: outputs\tables\test_IR_level_table_wb.csv
+      hash: md5
+      md5: 23b1ce124c0d23e3b858b53268364823
+      size: 118
+  process_data:
+    cmd: Rscript src\process_data.R
+    deps:
+    - path: data\raw
+      hash: md5
+      md5: 00c67ae12ab81d406b589a0fda16bc28.dir
+      size: 22934753
+      nfiles: 14
+    - path: src\helpers
+      hash: md5
+      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
+      size: 5669
+      nfiles: 7
+    - path: src\process_data.R
+      hash: md5
+      md5: 83681f197d05d4aca96ca75d9c037556
+      size: 2948
+    params:
+      par.yaml:
+        rounds_num_fixed: 12
+    outs:
+    - path: data\processed\leaderboard.RDS
+      md5: d8a44e36ad4000eb864cf7d6af0eaa4b
+      size: 56392
+    - path: data\processed\positions_all_list.RDS
+      hash: md5
+      md5: 347c1a3aec480e4c39998258bbcefca8
+      size: 470977
+    - path: data\processed\positions_list.RDS
+      hash: md5
+      md5: a689370e60e900d20ff7a5efc0e0dce8
+      size: 385397
+    - path: data\processed\returns.RDS
+      hash: md5
+      md5: 7df5ac8d7a27bb768fac6e65e3c48c22
+      size: 194887
+    - path: data\processed\returns_list.RDS
+      hash: md5
+      md5: ece5ca68ab9c8ac2efbb2c901d28edce
+      size: 170001
+  run_competition_simulated:
+    cmd: Rscript src\run_competition_simulated.R
+    deps:
+    - path: models\strategy_q_1.RDS
+      hash: md5
+      md5: 808b7cb0405846facc5e3777869aee14
+      size: 4495
+    - path: models\strategy_q_20.RDS
+      hash: md5
+      md5: 59c372594e572faaec41120cbfdfc43f
+      size: 4502
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\helpers
+      hash: md5
+      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
+      size: 5669
+      nfiles: 7
+    - path: src\run_competition_simulated.R
+      hash: md5
+      md5: 41b7133cd34c5d9ab8e0bb890f0b2e61
+      size: 6357
+    params:
+      par.yaml:
+        days_per_round: 20
+        days_per_round_fixed: 20
+        participants_num: 163
+        participants_num_fixed: 163
+        rep_compute_strategy: 5000
+        rep_estimate_coefficients: 100
+        rep_leaderboard_comparison: 10000
+        rep_position_effects: 10000
+        rep_simulate_competition: 100000
+        returns_lambda:
+        - 0
+        - 0.0001
+        - 0.0003
+        - 0.001
+        returns_mean: 0.00037
+        returns_num: 100
+        returns_num_fixed: 100
+        rounds_num: 12
+        rounds_num_fixed: 12
+        seed: 1
+    outs:
+    - path: models\participant_beta_simulated.RDS
+      hash: md5
+      md5: e23eef9e0a29fcb03f5b04e31881b063
+      size: 2326958
+    - path: models\participant_rank_simulated.RDS
+      hash: md5
+      md5: 995323e2ca98ad37ee1c16c9b2de23aa
+      size: 1145706
+    - path: models\participant_state_simulated.RDS
+      hash: md5
+      md5: 6428ee0c9abdc59a181004596adc373c
+      size: 5369027
+  run_competition_bootstrapped:
+    cmd: Rscript src\run_competition_bootstrapped.R
+    deps:
+    - path: data\processed\leaderboard.RDS
+      md5: d8a44e36ad4000eb864cf7d6af0eaa4b
+      size: 56392
+    - path: data\processed\returns_list.RDS
+      hash: md5
+      md5: ece5ca68ab9c8ac2efbb2c901d28edce
+      size: 170001
+    - path: models\strategy_q_1.RDS
+      hash: md5
+      md5: 808b7cb0405846facc5e3777869aee14
+      size: 4495
+    - path: models\strategy_q_20.RDS
+      hash: md5
+      md5: 59c372594e572faaec41120cbfdfc43f
+      size: 4502
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\helpers
+      hash: md5
+      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
+      size: 5669
+      nfiles: 7
+    - path: src\run_competition_bootstrapped.R
+      hash: md5
+      md5: de81b59e7959d4f7a5df332a3584065d
+      size: 5720
+    params:
+      par.yaml:
+        days_per_round: 20
+        days_per_round_fixed: 20
+        participants_num: 163
+        participants_num_fixed: 163
+        rep_compute_strategy: 5000
+        rep_estimate_coefficients: 100
+        rep_leaderboard_comparison: 10000
+        rep_position_effects: 10000
+        rep_simulate_competition: 100000
+        returns_lambda:
+        - 0
+        - 0.0001
+        - 0.0003
+        - 0.001
+        returns_mean: 0.00037
+        returns_num: 100
+        returns_num_fixed: 100
+        rounds_num: 12
+        rounds_num_fixed: 12
+        seed: 1
+    outs:
+    - path: models\participant_rank_bootstrapped.RDS
+      hash: md5
+      md5: da2cd0a07350ed126ae0843b172b8f21
+      size: 501997
+    - path: models\participant_state_bootstrapped.RDS
+      hash: md5
+      md5: bc8880f5041073bdc135e7d53e26b11f
+      size: 2307720
+  test_IR_level:
+    cmd: Rscript src\test_IR_level.R
+    deps:
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\helpers\WYY.R
+      hash: md5
+      md5: fca680e6918fa887349ac8e6f4be6ebb
+      size: 2274
+    - path: src\helpers\position_baseline.R
+      hash: md5
+      md5: 3e479c6e33a0ecb25a7723b3361f8a52
+      size: 466
+    - path: src\helpers\simulate_returns.R
+      hash: md5
+      md5: 3ff8a0c50e39d4a028c25762d5a4a044
+      size: 794
+    - path: src\test_IR_level.R
+      hash: md5
+      md5: 789455e5e764b8331d8154fab67b5d79
+      size: 2384
+    params:
+      par.yaml:
+        returns_mean: 0.00037
+    outs:
+    - path: models\test_IR_level.RDS
+      hash: md5
+      md5: af48bb20021164e2d54957b13e3d4972
+      size: 23261
+  test_IR_pvalue:
+    cmd: Rscript src\test_IR_pvalue.R
+    deps:
+    - path: data\processed\positions_list.RDS
+      hash: md5
+      md5: a689370e60e900d20ff7a5efc0e0dce8
+      size: 385397
+    - path: data\processed\returns_list.RDS
+      hash: md5
+      md5: ece5ca68ab9c8ac2efbb2c901d28edce
+      size: 170001
+    - path: src\helpers\WYY.R
+      hash: md5
+      md5: fca680e6918fa887349ac8e6f4be6ebb
+      size: 2274
+    - path: src\test_IR_pvalue.R
+      hash: md5
+      md5: b56998dab125082ed93e0d571f54af90
+      size: 1197
+    outs:
+    - path: outputs\tables\test_IR_pvalue_table.csv
+      hash: md5
+      md5: 0056532e88b2ee17c2a6d0712c5b4284
+      size: 37
+  submission_analysis:
+    cmd: Rscript src\submission_analysis.R
+    deps:
+    - path: data\processed\positions_all_list.RDS
+      hash: md5
+      md5: 347c1a3aec480e4c39998258bbcefca8
+      size: 470977
+    - path: data\processed\returns_list.RDS
+      hash: md5
+      md5: ece5ca68ab9c8ac2efbb2c901d28edce
+      size: 170001
+    - path: src\helpers\compute_round.R
+      hash: md5
+      md5: 0f40af114b467f4880e169f5a486c4d6
+      size: 532
+    - path: src\submission_analysis.R
+      hash: md5
+      md5: 5ce649a0b0577d74169a5ff004f14909
+      size: 6338
+    outs:
+    - path: outputs\plots\submission_analysis_long.png
+      hash: md5
+      md5: 891d5dd01b96dbda944504b02aff7bfa
+      size: 78170
+    - path: outputs\plots\submission_analysis_long_rank_diff.png
+      hash: md5
+      md5: 410adbfc50ea7c8ff1c961302306923d
+      size: 600099
+    - path: outputs\plots\submission_analysis_rank_long.png
+      hash: md5
+      md5: 087df9f26e380615c0552cb8afc562f5
+      size: 713314
+    - path: outputs\plots\submission_analysis_rank_skew.png
+      hash: md5
+      md5: 1e466f66f476927a2736f518cfda9dad
+      size: 571466
+    - path: outputs\tables\submission_analysis_median_prob.csv
+      hash: md5
+      md5: 34e0e8ed81389dc7f3ced54bdfdb1632
+      size: 511
