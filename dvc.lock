@@ -43,9 +43,9 @@ stages:
       size: 4158
     - path: src\helpers
       hash: md5
-      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
-      size: 5669
-      nfiles: 7
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
     params:
       par.yaml:
         participants_num_fixed: 163
@@ -70,9 +70,9 @@ stages:
       size: 7434
     - path: src\helpers
       hash: md5
-      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
-      size: 5669
-      nfiles: 7
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
     params:
       par.yaml:
         days_per_round: 20
@@ -132,6 +132,8 @@ stages:
     - Rscript src\auxiliary\competition_statistics_simulated.R
     - Rscript src\auxiliary\competition_statistics_bootstrapped.R
     - Rscript src\auxiliary\test_IR_level_table.R
+    - Rscript src\auxiliary\competition_statistics_simulated_sensitivity.R
+    - Rscript src\auxiliary\test_IR_level_table_sensitivity.R
     deps:
     - path: data\processed
       hash: md5
@@ -140,19 +142,19 @@ stages:
       nfiles: 5
     - path: models
       hash: md5
-      md5: b40e6bb4d5a0bdc71938e33677bec51e.dir
-      size: 12672239
-      nfiles: 10
+      md5: bd69e49c11fa5538387369aad7aaed49.dir
+      size: 39258795
+      nfiles: 21
     - path: outputs\metrics
       hash: md5
-      md5: 4895ad9540b4bdfac9e84ef292ef3185.dir
-      size: 647
-      nfiles: 3
+      md5: 3a810ecad069977f68a96878f79b8311.dir
+      size: 80
+      nfiles: 1
     - path: src
       hash: md5
-      md5: 8c9c0ee8f028d5107c596688cdf4926a.dir
-      size: 61556
-      nfiles: 22
+      md5: dfeae8fbc984dd365f92cadb32af3e54.dir
+      size: 78690
+      nfiles: 27
     params:
       par.yaml:
         days_per_round: 20
@@ -188,6 +190,18 @@ stages:
       hash: md5
       md5: 8100e28bee49c7e4a21bf1b90d506419
       size: 63385
+    - path: outputs\plots\rank_histogram_simulated_sensitivity_1.png
+      hash: md5
+      md5: f64de8a821cd14dd2147dd89cf3b8f38
+      size: 63694
+    - path: outputs\plots\rank_histogram_simulated_sensitivity_2.png
+      hash: md5
+      md5: 8f5e7cac310daec5154f8e79afdc68ec
+      size: 63871
+    - path: outputs\plots\rank_histogram_simulated_sensitivity_3.png
+      hash: md5
+      md5: 8f42d4293b2833b68731ad8a06564a2a
+      size: 65899
     - path: outputs\plots\scaling_effects.png
       hash: md5
       md5: 3bbc52baa79f0ec46080cbbf748da464
@@ -212,18 +226,66 @@ stages:
       hash: md5
       md5: 9881c06ac23cf74180773d0c739c6e99
       size: 491
+    - path: outputs\tables\state_table_simulated_rank_optimization_sensitivity_1.csv
+      hash: md5
+      md5: d8c8a4572412a03ccfff1a4d2444d00b
+      size: 496
+    - path: outputs\tables\state_table_simulated_rank_optimization_sensitivity_2.csv
+      hash: md5
+      md5: 1369ef88d9d1026ab6f4ad5607a5c217
+      size: 495
+    - path: outputs\tables\state_table_simulated_rank_optimization_sensitivity_3.csv
+      hash: md5
+      md5: 261e38d26a0f132a63b44e6d4a12b63d
+      size: 494
     - path: outputs\tables\state_table_simulated_tangency.csv
       hash: md5
       md5: 58702ac33761c32855662dcc3e067e3e
       size: 430
+    - path: outputs\tables\state_table_simulated_tangency_sensitivity_1.csv
+      hash: md5
+      md5: 091beb3c044087ea188bdcd1dfe55a14
+      size: 434
+    - path: outputs\tables\state_table_simulated_tangency_sensitivity_2.csv
+      hash: md5
+      md5: 1b9d2673894e3494f0891055233e570f
+      size: 434
+    - path: outputs\tables\state_table_simulated_tangency_sensitivity_3.csv
+      hash: md5
+      md5: 757d033e4a497d7d32d242950aed1f4d
+      size: 433
     - path: outputs\tables\test_IR_level_table_asy.csv
       hash: md5
       md5: 852529c9414d6b7b0b211255a79d6a02
+      size: 99
+    - path: outputs\tables\test_IR_level_table_asy_sensitivity_1.csv
+      hash: md5
+      md5: 7731383b4cdfa8ecca939ef70976d6fb
+      size: 99
+    - path: outputs\tables\test_IR_level_table_asy_sensitivity_2.csv
+      hash: md5
+      md5: 5ba6e185350c6cf615644a5d119e7340
+      size: 99
+    - path: outputs\tables\test_IR_level_table_asy_sensitivity_3.csv
+      hash: md5
+      md5: 5e33917dd2876704d3441920a6338b29
       size: 99
     - path: outputs\tables\test_IR_level_table_wb.csv
       hash: md5
       md5: 23b1ce124c0d23e3b858b53268364823
       size: 118
+    - path: outputs\tables\test_IR_level_table_wb_sensitivity_1.csv
+      hash: md5
+      md5: 72a562f44d3b0e4924040e7c3775f609
+      size: 120
+    - path: outputs\tables\test_IR_level_table_wb_sensitivity_2.csv
+      hash: md5
+      md5: 63796469930ec3f0b6c3506263e68ff4
+      size: 120
+    - path: outputs\tables\test_IR_level_table_wb_sensitivity_3.csv
+      hash: md5
+      md5: 5ed464b5e3da389b811f77cbec33228e
+      size: 120
   process_data:
     cmd: Rscript src\process_data.R
     deps:
@@ -234,9 +296,9 @@ stages:
       nfiles: 14
     - path: src\helpers
       hash: md5
-      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
-      size: 5669
-      nfiles: 7
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
     - path: src\process_data.R
       hash: md5
       md5: 83681f197d05d4aca96ca75d9c037556
@@ -281,9 +343,9 @@ stages:
       size: 80
     - path: src\helpers
       hash: md5
-      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
-      size: 5669
-      nfiles: 7
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
     - path: src\run_competition_simulated.R
       hash: md5
       md5: 41b7133cd34c5d9ab8e0bb890f0b2e61
@@ -347,9 +409,9 @@ stages:
       size: 80
     - path: src\helpers
       hash: md5
-      md5: e47153a4b7824c8dd661ff523cd16a7f.dir
-      size: 5669
-      nfiles: 7
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
     - path: src\run_competition_bootstrapped.R
       hash: md5
       md5: de81b59e7959d4f7a5df332a3584065d
@@ -480,3 +542,125 @@ stages:
       hash: md5
       md5: 34e0e8ed81389dc7f3ced54bdfdb1632
       size: 511
+  run_competition_simulated_sensitivity:
+    cmd: Rscript src\run_competition_simulated_sensitivity.R
+    deps:
+    - path: models\strategy_q_1.RDS
+      hash: md5
+      md5: 808b7cb0405846facc5e3777869aee14
+      size: 4495
+    - path: models\strategy_q_20.RDS
+      hash: md5
+      md5: 59c372594e572faaec41120cbfdfc43f
+      size: 4502
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\helpers
+      hash: md5
+      md5: ddcb378c6e41314e82d2d56adc76dbac.dir
+      size: 7574
+      nfiles: 8
+    - path: src\run_competition_simulated_sensitivity.R
+      hash: md5
+      md5: 50d0cd98cccaf4a8bfe460f3c1dce419
+      size: 7165
+    params:
+      par.yaml:
+        days_per_round: 20
+        days_per_round_fixed: 20
+        participants_num: 163
+        participants_num_fixed: 163
+        rep_compute_strategy: 5000
+        rep_estimate_coefficients: 100
+        rep_leaderboard_comparison: 10000
+        rep_position_effects: 10000
+        rep_simulate_competition: 100000
+        returns_lambda:
+        - 0
+        - 0.0001
+        - 0.0003
+        - 0.001
+        returns_mean: 0.00037
+        returns_num: 100
+        returns_num_fixed: 100
+        rounds_num: 12
+        rounds_num_fixed: 12
+        seed: 1
+    outs:
+    - path: models\participant_beta_simulated_sensitivity_1.RDS
+      hash: md5
+      md5: 0d7614f2742b5c42af0569f52d83764c
+      size: 2327870
+    - path: models\participant_beta_simulated_sensitivity_2.RDS
+      hash: md5
+      md5: 46129b29a324d9ab6aa89c8bd2a10b36
+      size: 2327699
+    - path: models\participant_beta_simulated_sensitivity_3.RDS
+      hash: md5
+      md5: da34decda1c5fbe4f276f7feaea9c5d4
+      size: 2327878
+    - path: models\participant_rank_simulated_sensitivity_1.RDS
+      hash: md5
+      md5: 9bfe7cba0beff0b6e4e3129a33129daf
+      size: 1146178
+    - path: models\participant_rank_simulated_sensitivity_2.RDS
+      hash: md5
+      md5: 01d420a970bc9649a53b6a1898fd11c1
+      size: 1142555
+    - path: models\participant_rank_simulated_sensitivity_3.RDS
+      hash: md5
+      md5: 417853806897cf8245ca30d0b4724a80
+      size: 1142074
+    - path: models\participant_state_simulated_sensitivity_1.RDS
+      hash: md5
+      md5: aca2a0ca986ad7d54bdb31c4a22f1b0d
+      size: 5368584
+    - path: models\participant_state_simulated_sensitivity_2.RDS
+      hash: md5
+      md5: c62af82a64cb031709aadd1211ef5801
+      size: 5367793
+    - path: models\participant_state_simulated_sensitivity_3.RDS
+      hash: md5
+      md5: 1aa19a673b727d27013c54328ba2a85e
+      size: 5367051
+  test_IR_level_sensitivity:
+    cmd: Rscript src\test_IR_level_sensitivity.R
+    deps:
+    - path: outputs\metrics\coefficients.yaml
+      hash: md5
+      md5: 9b994642ce562dc7bf4bad7cb154f761
+      size: 80
+    - path: src\helpers\WYY.R
+      hash: md5
+      md5: fca680e6918fa887349ac8e6f4be6ebb
+      size: 2274
+    - path: src\helpers\position_baseline.R
+      hash: md5
+      md5: 3e479c6e33a0ecb25a7723b3361f8a52
+      size: 466
+    - path: src\helpers\simulate_returns_BEKK.R
+      hash: md5
+      md5: 63ce99acdf1db2d8b7506608c5da7809
+      size: 1905
+    - path: src\test_IR_level_sensitivity.R
+      hash: md5
+      md5: 67c9e55777710993356d5ea8e5270d30
+      size: 2978
+    params:
+      par.yaml:
+        returns_mean: 0.00037
+    outs:
+    - path: models\test_IR_level_sensitivity_1.RDS
+      hash: md5
+      md5: 8d3962816b76da0ceb6f9b14a84638e0
+      size: 22864
+    - path: models\test_IR_level_sensitivity_2.RDS
+      hash: md5
+      md5: 40d3eaecf19e8948978a992edfcb692c
+      size: 23320
+    - path: models\test_IR_level_sensitivity_3.RDS
+      hash: md5
+      md5: aaca2e280e8fe7e943c6a9e19a9cae31
+      size: 23145

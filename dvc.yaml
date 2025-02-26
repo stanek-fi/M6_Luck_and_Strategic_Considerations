@@ -109,6 +109,41 @@ stages:
     - outputs\plots\submission_analysis_rank_long.png
     - outputs\tables\submission_analysis_median_prob.csv
     - outputs\plots\submission_analysis_rank_skew.png
+  run_competition_simulated_sensitivity:
+    cmd: Rscript src\run_competition_simulated_sensitivity.R
+    deps:
+    - src\run_competition_simulated_sensitivity.R
+    - src\helpers
+    - outputs\metrics\coefficients.yaml
+    - models\strategy_q_1.RDS
+    - models\strategy_q_20.RDS
+    params:
+    - par.yaml:
+    outs:
+    - models\participant_rank_simulated_sensitivity_1.RDS
+    - models\participant_state_simulated_sensitivity_1.RDS
+    - models\participant_beta_simulated_sensitivity_1.RDS
+    - models\participant_rank_simulated_sensitivity_2.RDS
+    - models\participant_state_simulated_sensitivity_2.RDS
+    - models\participant_beta_simulated_sensitivity_2.RDS
+    - models\participant_rank_simulated_sensitivity_3.RDS
+    - models\participant_state_simulated_sensitivity_3.RDS
+    - models\participant_beta_simulated_sensitivity_3.RDS
+  test_IR_level_sensitivity:
+    cmd: Rscript src\test_IR_level_sensitivity.R
+    deps:
+    - src\test_IR_level_sensitivity.R
+    - src\helpers\simulate_returns_BEKK.R
+    - src\helpers\position_baseline.R
+    - src\helpers\WYY.R
+    - outputs\metrics\coefficients.yaml
+    params:
+    - par.yaml:
+        - returns_mean
+    outs:
+    - models\test_IR_level_sensitivity_1.RDS
+    - models\test_IR_level_sensitivity_2.RDS
+    - models\test_IR_level_sensitivity_3.RDS
   auxiliary:
     cmd:
     - Rscript src\auxiliary\leaderboard_comparison.R
@@ -118,6 +153,8 @@ stages:
     - Rscript src\auxiliary\competition_statistics_simulated.R
     - Rscript src\auxiliary\competition_statistics_bootstrapped.R
     - Rscript src\auxiliary\test_IR_level_table.R
+    - Rscript src\auxiliary\competition_statistics_simulated_sensitivity.R
+    - Rscript src\auxiliary\test_IR_level_table_sensitivity.R
     deps:
     - src
     - data\processed
@@ -138,6 +175,30 @@ stages:
         cache: false
     - outputs\tables\test_IR_level_table_wb.csv:
         cache: false
+    - outputs\tables\state_table_simulated_tangency_sensitivity_1.csv:
+        cache: false
+    - outputs\tables\state_table_simulated_rank_optimization_sensitivity_1.csv:
+        cache: false
+    - outputs\tables\state_table_simulated_tangency_sensitivity_2.csv:
+        cache: false
+    - outputs\tables\state_table_simulated_rank_optimization_sensitivity_2.csv:
+        cache: false
+    - outputs\tables\state_table_simulated_tangency_sensitivity_3.csv:
+        cache: false
+    - outputs\tables\state_table_simulated_rank_optimization_sensitivity_3.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_asy_sensitivity_1.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_wb_sensitivity_1.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_asy_sensitivity_2.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_wb_sensitivity_2.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_asy_sensitivity_3.csv:
+        cache: false
+    - outputs\tables\test_IR_level_table_wb_sensitivity_3.csv:
+        cache: false
     plots:
     - outputs\plots\strategy_diagram_q_1.png
     - outputs\plots\strategy_diagram_q_20.png
@@ -145,3 +206,6 @@ stages:
     - outputs\plots\position_effects.png
     - outputs\plots\rank_histogram_simulated.png
     - outputs\plots\rank_histogram_bootstrapped.png
+    - outputs\plots\rank_histogram_simulated_sensitivity_1.png
+    - outputs\plots\rank_histogram_simulated_sensitivity_2.png
+    - outputs\plots\rank_histogram_simulated_sensitivity_3.png
