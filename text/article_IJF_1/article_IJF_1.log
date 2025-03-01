@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.5)  21 NOV 2024 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.5)  1 MAR 2025 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Data/CERGE-EI/M6_discussion_paper/M6_discussion_paper_private/text/article_arxiv/article_arxiv.tex
-(c:/Data/CERGE-EI/M6_discussion_paper/M6_discussion_paper_private/text/article_arxiv/article_arxiv.tex
+**c:/Data/CERGE-EI/M6_discussion_paper/M6_Luck_and_Strategic_Considerations/text/article_IJF_1/article_IJF_1.tex
+(c:/Data/CERGE-EI/M6_discussion_paper/M6_Luck_and_Strategic_Considerations/text/article_IJF_1/article_IJF_1.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-05-15> (elsarticle.cls
 Document Class: elsarticle 2010/06/11, 1.21: Elsevier Ltd
@@ -70,7 +70,7 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@enLab=\toks18
 \@sep=\skip50
 \@@sep=\skip51
- (article_arxiv.spl) (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+ (article_IJF_1.spl) (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
@@ -78,7 +78,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count199
 )
 \splwrite=\write3
-\openout3 = `article_arxiv.spl'.
+\openout3 = `article_IJF_1.spl'.
 
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -922,8 +922,8 @@ File: ot1txr.fd 2000/12/15 v3.1
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box73
-) (article_arxiv.aux)
-\openout1 = `article_arxiv.aux'.
+) (article_IJF_1.aux)
+\openout1 = `article_IJF_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 41.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 41.
@@ -1020,51 +1020,46 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 41.
-(article_arxiv.out) (article_arxiv.out)
+(article_IJF_1.out) (article_IJF_1.out)
 \@outlinefile=\write5
-\openout5 = `article_arxiv.out'.
+\openout5 = `article_IJF_1.out'.
 
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 61.
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 78.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 66.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 84.
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 78.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 84.
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 1448) in paragraph at lines 91--99
-\OT1/txr/m/n/10 might mo-ti-vate teams to pur-sue ob-jec-tives be-yond
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<elsevier-logo-3p.pdf, id=82, 54.08205pt x 59.7432pt>
+<elsevier-logo-3p.pdf, id=74, 54.08205pt x 59.7432pt>
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 99.
+Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 98.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
-<SDlogo-3p.pdf, id=83, 169.8345pt x 33.9669pt>
+<SDlogo-3p.pdf, id=75, 169.8345pt x 33.9669pt>
 File: SDlogo-3p.pdf Graphic file (type pdf)
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf  used on input line 99.
+Package pdftex.def Info: SDlogo-3p.pdf  used on input line 98.
 (pdftex.def)             Requested size: 169.83408pt x 33.96681pt.
-LaTeX Font Info:    Trying to load font information for OT1+txss on input line 99.
+LaTeX Font Info:    Trying to load font information for OT1+txss on input line 98.
  (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 17.09995pt on input line 99.
+(Font)              scaled to size 17.09995pt on input line 98.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [] 
@@ -1074,12 +1069,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 6526) in paragraph at lines 113--113
+Underfull \hbox (badness 1142) in paragraph at lines 98--106
+[]\OT1/txr/m/n/10 The sec-ond part of our anal-y-sis fo-cuses on the
+ []
+
+
+Underfull \hbox (badness 6526) in paragraph at lines 120--120
 [][]\OT1/txr/m/n/8 A repli-ca-tion repos-i-tory for this ar-ti-cle is avail-able at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []$\OT1/cmtt/m/n/8 https : / / github . com / stanek-[]fi / M6 _ Luck _ and _ Strategic _
  []
 
@@ -1089,17 +1089,15 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 210.
- (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
 [3]
-Underfull \vbox (badness 3668) has occurred while \output is active []
-
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 224.
+ (C:\Users\stane\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
 PGFPlots: reading {../../outputs/tables/leaderboard_comparison.csv}
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1109,13 +1107,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [4]
 PGFPlots: reading {../../outputs/tables/test_IR_level_table_asy.csv}
 PGFPlots: reading {../../outputs/tables/test_IR_level_table_wb.csv}
-PGFPlots: reading {../../outputs/tables/test_IR_pvalue_table.csv}
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
 [5]
+PGFPlots: reading {../../outputs/tables/test_IR_pvalue_table.csv}
 PGFPlots: reading {../../outputs/tables/state_table_simulated_tangency.csv}
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1123,64 +1121,71 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [6]
-<../../outputs/plots/strategy_diagram_q_1.png, id=268, 433.62pt x 542.025pt>
+Underfull \vbox (badness 5832) has occurred while \output is active []
+
+<../../outputs/plots/strategy_diagram_q_1.png, id=281, 433.62pt x 542.025pt>
 File: ../../outputs/plots/strategy_diagram_q_1.png Graphic file (type png)
 <use ../../outputs/plots/strategy_diagram_q_1.png>
-Package pdftex.def Info: ../../outputs/plots/strategy_diagram_q_1.png  used on input line 513.
+Package pdftex.def Info: ../../outputs/plots/strategy_diagram_q_1.png  used on input line 535.
 (pdftex.def)             Requested size: 222.0pt x 277.50427pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[7 <../../outputs/plots/strategy_diagram_q_1.png>]
-PGFPlots: reading {../../outputs/tables/state_table_simulated_rank_optimization.csv}
-
-Overfull \hbox (2.87039pt too wide) in paragraph at lines 582--583
- [][] 
- []
-
-PGFPlots: reading {../../outputs/tables/state_table_bootstrapped.csv}
-<../../outputs/plots/rank_histogram_simulated.png, id=296, 476.982pt x 433.62pt>
-File: ../../outputs/plots/rank_histogram_simulated.png Graphic file (type png)
-<use ../../outputs/plots/rank_histogram_simulated.png>
-Package pdftex.def Info: ../../outputs/plots/rank_histogram_simulated.png  used on input line 616.
-(pdftex.def)             Requested size: 222.0pt x 201.82309pt.
-<../../outputs/plots/rank_histogram_bootstrapped.png, id=297, 476.982pt x 433.62pt>
-File: ../../outputs/plots/rank_histogram_bootstrapped.png Graphic file (type png)
-<use ../../outputs/plots/rank_histogram_bootstrapped.png>
-Package pdftex.def Info: ../../outputs/plots/rank_histogram_bootstrapped.png  used on input line 623.
-(pdftex.def)             Requested size: 222.0pt x 201.82309pt.
-
+[7]
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[8]
-<../../outputs/plots/submission_analysis_long.png, id=316, 476.982pt x 433.62pt>
-File: ../../outputs/plots/submission_analysis_long.png Graphic file (type png)
-<use ../../outputs/plots/submission_analysis_long.png>
-Package pdftex.def Info: ../../outputs/plots/submission_analysis_long.png  used on input line 652.
-(pdftex.def)             Requested size: 219.78122pt x 199.80505pt.
-<../../outputs/plots/submission_analysis_long_rank_diff.png, id=317, 476.982pt x 433.62pt>
-File: ../../outputs/plots/submission_analysis_long_rank_diff.png Graphic file (type png)
-<use ../../outputs/plots/submission_analysis_long_rank_diff.png>
-Package pdftex.def Info: ../../outputs/plots/submission_analysis_long_rank_diff.png  used on input line 659.
-(pdftex.def)             Requested size: 219.78122pt x 199.80505pt.
+[8 <../../outputs/plots/strategy_diagram_q_1.png>]
+PGFPlots: reading {../../outputs/tables/state_table_simulated_rank_optimization.csv}
+
+Overfull \hbox (2.87039pt too wide) in paragraph at lines 605--606
+ [][] 
+ []
+
+PGFPlots: reading {../../outputs/tables/state_table_bootstrapped.csv}
+<../../outputs/plots/rank_histogram_simulated.png, id=322, 476.982pt x 433.62pt>
+File: ../../outputs/plots/rank_histogram_simulated.png Graphic file (type png)
+<use ../../outputs/plots/rank_histogram_simulated.png>
+Package pdftex.def Info: ../../outputs/plots/rank_histogram_simulated.png  used on input line 639.
+(pdftex.def)             Requested size: 222.0pt x 201.82309pt.
+<../../outputs/plots/rank_histogram_bootstrapped.png, id=323, 476.982pt x 433.62pt>
+File: ../../outputs/plots/rank_histogram_bootstrapped.png Graphic file (type png)
+<use ../../outputs/plots/rank_histogram_bootstrapped.png>
+Package pdftex.def Info: ../../outputs/plots/rank_histogram_bootstrapped.png  used on input line 646.
+(pdftex.def)             Requested size: 222.0pt x 201.82309pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
 [9 <../../outputs/plots/rank_histogram_simulated.png> <../../outputs/plots/rank_histogram_bootstrapped.png>]
-<../../outputs/plots/submission_analysis_rank_long.png, id=329, 476.982pt x 1011.78pt>
+<../../outputs/plots/submission_analysis_long.png, id=345, 476.982pt x 433.62pt>
+File: ../../outputs/plots/submission_analysis_long.png Graphic file (type png)
+<use ../../outputs/plots/submission_analysis_long.png>
+Package pdftex.def Info: ../../outputs/plots/submission_analysis_long.png  used on input line 675.
+(pdftex.def)             Requested size: 219.78122pt x 199.80505pt.
+<../../outputs/plots/submission_analysis_long_rank_diff.png, id=346, 476.982pt x 433.62pt>
+File: ../../outputs/plots/submission_analysis_long_rank_diff.png Graphic file (type png)
+<use ../../outputs/plots/submission_analysis_long_rank_diff.png>
+Package pdftex.def Info: ../../outputs/plots/submission_analysis_long_rank_diff.png  used on input line 682.
+(pdftex.def)             Requested size: 219.78122pt x 199.80505pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ 
+ []
+
+[10 <../../outputs/plots/submission_analysis_long.png> <../../outputs/plots/submission_analysis_long_rank_diff.png>]
+<../../outputs/plots/submission_analysis_rank_long.png, id=357, 476.982pt x 1011.78pt>
 File: ../../outputs/plots/submission_analysis_rank_long.png Graphic file (type png)
 <use ../../outputs/plots/submission_analysis_rank_long.png>
-Package pdftex.def Info: ../../outputs/plots/submission_analysis_rank_long.png  used on input line 672.
+Package pdftex.def Info: ../../outputs/plots/submission_analysis_rank_long.png  used on input line 695.
 (pdftex.def)             Requested size: 219.78122pt x 466.2118pt.
 PGFPlots: reading {../../outputs/tables/submission_analysis_median_prob.csv}
 
-Overfull \hbox (3.86105pt too wide) in paragraph at lines 703--706
+Overfull \hbox (3.86105pt too wide) in paragraph at lines 726--729
  [][] 
  []
 
@@ -1189,66 +1194,100 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[10 <../../outputs/plots/submission_analysis_long.png> <../../outputs/plots/submission_analysis_long_rank_diff.png>]
+[11 <../../outputs/plots/submission_analysis_rank_long.png>]
+Underfull \hbox (badness 2269) in paragraph at lines 760--767
+[]\OT1/txr/m/n/10 Despite these caveats, the anal-y-sis of port-fo-lio
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[11 <../../outputs/plots/submission_analysis_rank_long.png>] (article_arxiv.bbl
-Underfull \hbox (badness 10000) has occurred while \output is active
- 
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 180--186
+[12] (article_IJF_1.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 185--191
 []\OT1/txr/m/n/8 Webster, I., 2023.  S&P 500 Re-turns since 1930.
  []
 
 )
-<../../outputs/plots/position_effects.png, id=386, 505.89pt x 433.62pt>
+Underfull \hbox (badness 10000) has occurred while \output is active
+ 
+ []
+
+[13]
+<../../outputs/plots/position_effects.png, id=417, 505.89pt x 433.62pt>
 File: ../../outputs/plots/position_effects.png Graphic file (type png)
 <use ../../outputs/plots/position_effects.png>
-Package pdftex.def Info: ../../outputs/plots/position_effects.png  used on input line 823.
+Package pdftex.def Info: ../../outputs/plots/position_effects.png  used on input line 848.
 (pdftex.def)             Requested size: 222.0pt x 190.29053pt.
-<../../outputs/plots/strategy_diagram_q_20.png, id=387, 433.62pt x 542.025pt>
+<../../outputs/plots/strategy_diagram_q_20.png, id=418, 433.62pt x 542.025pt>
 File: ../../outputs/plots/strategy_diagram_q_20.png Graphic file (type png)
 <use ../../outputs/plots/strategy_diagram_q_20.png>
-Package pdftex.def Info: ../../outputs/plots/strategy_diagram_q_20.png  used on input line 837.
+Package pdftex.def Info: ../../outputs/plots/strategy_diagram_q_20.png  used on input line 862.
 (pdftex.def)             Requested size: 222.0pt x 277.50427pt.
-<../../outputs/plots/submission_analysis_rank_skew.png, id=388, 476.982pt x 1011.78pt>
+<../../outputs/plots/submission_analysis_rank_skew.png, id=419, 476.982pt x 1011.78pt>
 File: ../../outputs/plots/submission_analysis_rank_skew.png Graphic file (type png)
 <use ../../outputs/plots/submission_analysis_rank_skew.png>
-Package pdftex.def Info: ../../outputs/plots/submission_analysis_rank_skew.png  used on input line 846.
+Package pdftex.def Info: ../../outputs/plots/submission_analysis_rank_skew.png  used on input line 871.
 (pdftex.def)             Requested size: 219.78122pt x 466.2118pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[13]
+[14 <../../outputs/plots/position_effects.png>]
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_asy_sensitivity_1.csv}
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_wb_sensitivity_1.csv}
+
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[14 <../../outputs/plots/position_effects.png> <../../outputs/plots/strategy_diagram_q_20.png>]
+[15 <../../outputs/plots/strategy_diagram_q_20.png> <../../outputs/plots/submission_analysis_rank_skew.png>]
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_asy_sensitivity_2.csv}
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_wb_sensitivity_2.csv}
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_asy_sensitivity_3.csv}
+PGFPlots: reading {../../outputs/tables/test_IR_level_table_wb_sensitivity_3.csv}
+
+Underfull \hbox (badness 1360) in paragraph at lines 1025--1027
+\OT1/txr/m/n/10 when sim-u-lat-ing the com-pe-ti-tion un-der A1'-a/A1'-
+ []
+
+PGFPlots: reading {../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_1.csv}
+
+Overfull \hbox (2.87039pt too wide) in paragraph at lines 1046--1047
+ [][] 
+ []
+
+PGFPlots: reading {../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_2.csv}
+
+Overfull \hbox (2.87039pt too wide) in paragraph at lines 1069--1070
+ [][] 
+ []
+
+PGFPlots: reading {../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_3.csv}
+
+Overfull \hbox (2.87039pt too wide) in paragraph at lines 1092--1093
+ [][] 
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
  
  []
 
-[15
-
- <../../outputs/plots/submission_analysis_rank_skew.png>] (article_arxiv.aux)
-Package rerunfilecheck Info: File `article_arxiv.out' has not changed.
-(rerunfilecheck)             Checksum: 680D822A8CB79FEDFABA6742FCA1FA31;2396.
+[16] (article_IJF_1.aux)
+Package rerunfilecheck Info: File `article_IJF_1.out' has not changed.
+(rerunfilecheck)             Checksum: 3105D72260E36682A6CF9708257EDCF5;2564.
  ) 
 Here is how much of TeX's memory you used:
- 35511 strings out of 476411
- 829603 string characters out of 5789135
- 1893845 words of memory out of 5000000
- 55104 multiletter control sequences out of 15000+600000
+ 35562 strings out of 476411
+ 831567 string characters out of 5789135
+ 1900845 words of memory out of 5000000
+ 55124 multiletter control sequences out of 15000+600000
  553705 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,26n,89p,1181b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,26n,89p,1190b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
 
@@ -1282,10 +1321,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
- <C:\Users\stane\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm5.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article_arxiv.pdf (15 pages, 3535223 bytes).
+ <C:\Users\stane\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm5.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxi.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/stane/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on article_IJF_1.pdf (16 pages, 3553680 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 121 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 537 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
+ 196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

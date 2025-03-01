@@ -49,28 +49,34 @@
 
     \author{
         Filip Staněk\fnref{cor1}
+        % REDACTED
     }
-    \address{CERGE-EI}
+    \address{
+        CERGE-EI
+        % REDACTED
+    }
     \fntext[cor1]{
         \texttt{filip.stanek@cerge-ei.cz}\\
         CERGE-EI, a joint workplace of Charles University and the Economics Institute of the Czech Academy of Sciences, Politickych veznu 7, 111 21 Prague, Czech Republic.
+        % REDACTED
     }
 
     \dochead{}
 
     \begin{abstract}
 
-        This article investigates the influence of luck and strategic considerations on performance of teams participating in the M6 investment challenge.
-        We find that there is insufficient evidence to suggest that the extreme Sharpe ratios observed are beyond what one would expect by chance, given the number of teams, and thus not necessarily indicative of the possibility of consistently attaining abnormal returns. 
+        This article investigates the influence of luck and strategic considerations on the performance of teams participating in the M6 investment challenge.
+        We find that there is insufficient evidence to suggest that the extreme Sharpe ratios observed are beyond what one would expect by chance, given the number of teams, and thus not necessarily indicative of the possibility of consistently attaining abnormal returns.
+        These findings are consistent with the Efficient Market Hypothesis (EMH), reinforcing the notion that any apparent outperformance is indistinguishable from statistical noise.
         Furthermore, we introduce a stylized model of the competition to derive and analyze a portfolio strategy optimized for attaining the top rank.
         The results demonstrate that the task of achieving the top rank is not necessarily identical to that of attaining the best investment returns in expectation.
-        It is possible to improve one's chances of winning, even without the ability to attain abnormal returns, by choosing portfolio weights adversarially based on the current competition ranking.
-        Empirical analysis of submitted portfolio weights aligns with this finding.
+        It is possible to improve one's chances of winning, even without the ability to attain abnormal returns, by constructing a portfolio that deviates from the strategies of competitors.
+        Empirical analysis of submitted portfolios shows that teams that differentiated themselves from competitors by holding a higher proportion of short positions were more than eight times as likely to secure a top rank, aligning with findings from the stylized model.
 
     \end{abstract}
 
     \begin{keyword}
-        M6 Forecasting Competition, Investment Competition, Portfolio Optimization, Dynamic Programming\\
+        M6 Forecasting Competition, Efficient Market Hypothesis, Portfolio Optimization\\
         \emph{JEL codes:} G11, G17, G41, C61
 
     \end{keyword}
@@ -82,19 +88,20 @@
 This article analyzes factors influencing the performance of teams participating in the investment challenge of the M6 forecasting competition \citep[see][]{makridakisM6ForecastingCompetition2023}.
 By employing a combination of statistical analyses and model-based simulations, we assess the extent to which the final ranking can be attributed to luck and how teams might have benefited from recognizing the nonlinear reward structure and adversarial nature of the competition when constructing their portfolios.
 
-The first part of our analysis examines the role that random variation played in the final ranking and the possibility of consistently achieving abnormal returns.
-We develop a stylized model of the competition that replicates key aggregate statistics and use it to assess the properties of the \citet{wrightTestEqualityMultiple2014} test of equality of expected Sharpe ratios under conditions observed in the M6 competition.
-After verifying its applicability, we employ the test to assess whether the variation in Sharpe ratios observed among teams necessarily implies differences in expected Sharpe ratios, or whether it can be explained merely by random variation.
-Despite the large variation in Sharpe ratios, the results do not appear to be incompatible with the null hypothesis of equality of expected Sharpe ratios.
-Additionally, we use the stylized model to assess the extent to which the ability to attain abnormal returns improves one’s chances of securing different ranks in the investment challenge.
+The first part of our analysis examines whether the final ranking could result solely from random variation or whether it reflects genuine abilities to achieve abnormal returns.
+We apply the \cite{wrightTestEqualityMultiple2014} test of equality of Sharpe ratios to the M6 data.
+To verify that this test remains properly sized even under conditions involving a large number of teams and a single-year evaluation period, we conduct simulations using a stylized model calibrated to key M6 statistics.
+These simulations indicate that, while the canonical version of the test with analytical critical values tends to over-reject in large-$K$, short-$T$ settings; a bootstrapped variant retains accurate size even in such extreme conditions.
+With this reassurance, we then apply the bootstrapped version to the actual M6 data, concluding that there is no compelling evidence to suggest the observed Sharpe ratio differences reflect systematic abnormal returns rather than mere chance.
+Finally, we employ the stylized model once again to gauge how an ability to generate abnormal returns might improve a team’s chances of securing different ranks in the investment challenge.
 
 The second part of our analysis focuses on the strategic aspects inherent to the competition format, which might motivate teams to pursue objectives beyond merely maximizing Sharpe ratios. 
-Extensive literature documents the effects of competition-like incentive structures on investment decisions, especially regarding fund managers' compensation and behavior. 
+Extensive literature documents the effects of competition-like incentive structures on investment decisions, especially in relation to fund managers' compensation and behavior. 
 \citet{brownTournamentsTemptationsAnalysis1996} show that when fund managers' compensation is linked to relative performance, those performing poorly mid-year tend to choose more volatile portfolios in the latter half of the evaluation period compared to mid-year leaders.
 Similarly, \citet{eltonIncentiveFeesMutual2003} find that funds with performance-linked compensation increase risk following a period of poor performance.
 \citet{krasnyAssetPricingStatus2011} shows that in contexts where investors are concerned with relative wealth, those performing poorly previously are likely to seek portfolio choices that maximize chances of improving their rank, whereas successful investors aim to maintain the status quo and hedge against the choices of others.
 In experimental settings, \citet{linFundConvexityTail2011} and \citet{dijkRankMattersImpact2014} show that contestants adapt their portfolios to their current relative performance, selecting assets with either positively or negatively skewed returns to maximize the probability of securing or retaining a top rank, respectively.
-Particularly relevant in the context of M6, \citet{niekenRisktakingTournamentsTheory2010} demonstrate that the behaviors of both top-ranking contestants and contenders critically depend on the correlation of the returns from available investment strategies.
+Particularly relevant in the context of M6, \citet{niekenRisktakingTournamentsTheory2010} demonstrate that the behavior of both top-ranking contestants and contenders critically depend on the correlation of the returns from available investment strategies.
 A contender is motivated to choose a strategy dissimilar to that of the top-ranking contestant to maximize the probability of significantly outperforming him/her, whereas the top-ranking contestant is motivated to mimic the strategy of the contender to minimize the probability of being overtaken.
 
 To assess to what degree such effects might be relevant to the M6 investment challenge, we formulate the problem of maximizing the probability of securing a top rank by manipulating the proportion of short positions and, as a result, the degree of correlation between one's returns and the returns of other teams, as a dynamic programming problem and numerically solve it in the stylized model of the competition introduced earlier.
@@ -112,10 +119,12 @@ Section \ref{section:conclusions} concludes.\footnote{
     A replication repository for this article is available at \url{https://github.com/stanek-fi/M6_Luck_and_Strategic_Considerations}. 
 }
 
-\section{Problem Setup}\label{subsection:problem_setup}
+\section{Competition Setup}\label{subsection:problem_setup}
 
-The competition includes a universe of $I=100$ assets, consisting of 50 stocks from the S\&P 500 and 50 ETFs. 
-There are $K\in \mathcal{N}$ teams (each team is composed of up to 5 individuals) competing in either quintile prediction for these assets (forecasting challenge), portfolio optimization (investment challenge), or a combination of both (duathlon challenge).
+The M6 Competition incorporates several design innovations, most notably its live, multi-round format in which participants submit both forecasts and investment portfolios at regular intervals. 
+This approach enables the organizers to evaluate not only the predictive accuracy of participants’ models but also the practical utility of those forecasts in real-world decision making.
+The competition focuses on a universe of $I=100$ assets, consisting of 50 stocks from the S\&P 500 and 50 ETFs. 
+There are $K\in \mathcal{N}$ teams (each composed of up to 5 individuals) competing in either quintile prediction for these assets (forecasting challenge), portfolio optimization (investment challenge), or a combination of both (duathlon challenge).
 
 In the investment challenge, each team $k$ is tasked with submitting portfolio weights $w_{i,m,k}$ for assets $1 \leq i \leq I$ over the span of $M=12$ four-week long intervals $T_{m}$.
 Portfolio weights are submitted prior to the beginning of each interval $T_{m}$ with $1 \leq m \leq M$, and the sum of the portfolio weights in absolute value is restricted to the interval:
@@ -153,10 +162,15 @@ are rewarded.\footnote{
     The official competition rules are available in \citet{makridakisM6FinancialDuathlon2022}.
 }
 
+Continuing the tradition of previous M-competitions, the organizers formulated a series of hypotheses in advance of the contest. 
+The most relevant here is Hypothesis No. 1: \emph{``The efficient market hypothesis will hold for the great majority of teams but this will not be the case for the top performing ones.''} \citep{makridakisM6ForecastingCompetition2023}
+In the next two sections, we examine this proposition in detail and explore factors that may help account for the remarkable investment returns observed.
+
 \section{The Role of Luck}\label{section:role_of_luck}
+
 The exceptional investment returns achieved by the top teams in M6 raise a critical question: 
 Are these performances indicative of a genuine ability to consistently outperform the market, challenging the Efficient Market Hypothesis (EMH), or could they be explained by the fact that among the large number of teams competing in M6, some are bound to achieve good results purely by chance?
-More formally, are the $IR_{T_{1}:T_{12},k}$ observed among the M6 teams compatible with the null hypothesis that the $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ of \emph{all} teams are equal?
+Formally, are the $IR_{T_{1}:T_{12},k}$ observed among the M6 teams compatible with the null hypothesis that the $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ of \emph{all} teams are equal?
 The methodology for testing the equality of Sharpe ratios has evolved since the pioneering work of \citet{jobsonPerformanceHypothesisTesting1981} and \citet{memmelPerformanceHypothesisTesting2003}.
 \citet{ledoitRobustPerformanceHypothesis2008} generalized the test of equality of expected Sharpe ratios for two portfolio strategies to account for non-normality and time-series autocorrelation.
 Particularly relevant to our application, \citet{leungTestingEqualityMultiple2008} propose a test of equality for many portfolio strategies under the assumption of normality and temporal independence.
@@ -193,7 +207,7 @@ where $q_{1-\alpha}(\chi^2_{K-1})$ is the $1-\alpha$ quantile of a $\chi^2$ dist
 
 The application of the WYY test to the M6 competition is challenging due to the large number of teams compared to the relatively short time window over which the $IR_{k}$ are measured.
 The empirical demonstration in \citet{leungTestingEqualityMultiple2008} and \citet{wrightTestEqualityMultiple2014} involves 18 portfolios over a span of 8 years, which contrasts sharply with the 163 teams who participated during the whole duration of 1 year in M6.
-Before applying the test, it is crucial to validate that even in this scenario, the distribution of the $T^{2}$ statistic can be reasonably approximated by its limiting $\chi^{2}_{K-1}$ distribution, ensuring that any rejection is not merely due to finite sample distortions.
+Before applying the test, it is crucial to validate that, even in this scenario, the distribution of the $T^{2}$ statistic can be reasonably approximated by its limiting $\chi^{2}_{K-1}$ distribution, ensuring that any rejection is not simply due to finite sample distortions.
 To address this, we introduce a highly stylized model of the competition (under the presumption that $H_{0}$ holds) replicating key statistics observed in M6.
 By repeatedly simulating this model, we can assess potential level distortions of the WYY test under these extreme conditions.
 
@@ -280,7 +294,7 @@ From the estimated values, it is apparent that teams, on average, maintain somew
     \caption{
         Observed \& Simulated $IR_{T_{m},:}$\\
         \footnotesize
-        Observed mean, standard deviation, $1\%$, and $99\%$ quantiles of $IR_{T_{m},:}$ for individual submissions and globaly, along with the mean of their simulated counterparts under A2.
+        Observed mean, standard deviation, $1\%$, and $99\%$ quantiles of $IR_{T_{m},:}$ for individual submissions and globally, along with the mean of their simulated counterparts under A2.
         Standard deviations across simulations in parentheses.
     }
     \label{tab:leaderboard_comparison}
@@ -357,13 +371,21 @@ where $q_{1-\alpha}(\tilde{T}^{2})$ is the $1-\alpha$ quantile of $\tilde{T}^{2}
 As $\tilde{IR}_{k}$ is symmetrically distributed around $0$ by construction, it follows that $\mathbb{E}[\tilde{IR}_{k}]=0$ and that $H_{0}$ is satisfied.
 Consequently, following \citet{wrightTestEqualityMultiple2014}, 
 \begin{equation}
-    \tilde{T}^{2} \stackrel{\text{d}}{\rightarrow} \chi_{K-1}^{2},
+    \tilde{T}^{2} \stackrel{\text{d}}{\rightarrow} \chi_{K-1}^{2}.
 \end{equation}
-implying that such an approach is asymptotically valid.
 To explore its small sample size properties, we repeat the simulation experiment as with the WYY test with analytical critical values.
 As shown in Table \ref{tab:test_IR_level_table_wb}, rejection rates of the WYY test with bootstrap critical values (1000 bootstrap repetitions) are much closer to their nominal values, even with $K$ as high as $163$.
 
-Equipped with a correctly leveled test, we can proceed with addressing the main question.
+
+It is crucial to emphasize that neither A1 nor A2 are prerequisites for the validity of the WYY test, whether in its analytical or bootstrapped form. 
+Uncritical application of tests in high-dimensional settings with relatively few observations, such as M6, can often lead to spurious rejections, as shown in Table \ref{tab:test_IR_level_table_asy}. 
+The role of A1–A2 in this section is simply to provide a stylized environment for assessing whether bootstrapped critical values—a common remedy in such cases—can effectively address these concerns. 
+While the stylized model is admittedly crude and imperfect, it offers additional reassurance that the conclusions drawn from applying the bootstrapped WYY test to the M6 data are unlikely to be compromised by finite-sample distortions.
+
+To evaluate the robustness of the finite-sample behavior observed in Tables \ref{tab:test_IR_level_table_asy} and \ref{tab:test_IR_level_table_wb} under assumption A1, we extend our level simulations to incorporate more realistic return-generating processes, including clustered volatility, heavy tails, and their combination (see Tables \ref{tab:combined_rejection_rates_sensitivity_1}, \ref{tab:combined_rejection_rates_sensitivity_2}, \ref{tab:combined_rejection_rates_sensitivity_3} in \ref{appendix:sensitivity_analysis}). 
+The results indicate that the WYY test with bootstrapped critical values retains correct size even under these conditions. 
+While this provides strong empirical support for its reliability under the challenging high-$K$, low-$T$ conditions of M6, further theoretical and empirical investigation remains warranted, though such an investigation lies beyond the scope of this article.
+
 Table \ref{tab:test_IR_pvalue_table} shows the p-value of the WYY test with bootstrap critical values (1000 bootstrap repetitions) applied to portfolio weights submitted in M6.\footnote{
     14 teams whose submissions were identical to the \emph{M6 dummy} were counted as a single team to ensure that the covariance matrix is of full rank.
 } % #TEMP
@@ -388,7 +410,7 @@ The observed $\{IR_{k}\}_{k=1}^{K}$ appear to be compatible with the null hypoth
     \label{tab:test_IR_pvalue_table}
 \end{table}
 
-This conclusion also seems to be supported directly by Table \ref{tab:leaderboard_comparison}, as simulated $IR_{T_{m},:}$ under A2 mimics not only means and dispersions of $IR_{T_{m},:}$ observed among teams but also its tail behavior.
+This conclusion also seems to be also supported directly by Table \ref{tab:leaderboard_comparison}, as simulated $IR_{T_{m},:}$ under A2 mimics not only means and dispersions of $IR_{T_{m},:}$ observed among teams but also its tail behavior.
 For instance, the $99\%$ quantile of $IR_{T_{1}:T_{12},:}$ if teams simply submitted their portfolios at random according to A2 is $29.82$ with a standard deviation of $3.32$.
 This indeed encompasses the actual observed $99\%$ quantile of the total $IR_{T_{1}:T_{12},:}$; $26.22$, confirming that it is possible to obtain as extreme $IR_{T_{1}:T_{12},:}$ as those observed in the competition, even if $H_{0}$ is satisfied.
 
@@ -419,7 +441,7 @@ For this type of team, the tangency portfolio that maximizes expected risk-adjus
 We repeatedly (100,000 repetitions) simulate the stylized model of the competition under A1' with 162 teams following the baseline portfolio (A2) and one team following the tangency portfolio in Eq. \ref{eq:tangency_portfolio} with varying degrees of predictability $\lambda$.
 Table \ref{tab:state_table_simulated_tangency} displays the mean attained returns $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ and the probability of securing at least 1st, 5th, 10th, and 20th rank in the competition for individual portfolio strategies. 
 In an environment with a dispersion of $IR_{T_{1}:T_{12},:}$ comparable to M6, a team capable of consistently attaining almost double the market returns (relative to the performance of the tangency portfolio with $\lambda = 0$, which collapses to the equal-weighted long portfolio) can still secure up to 10th place only with a probability of $0.146$. 
-This demonstrates that, even with substantially better $\mathbb{E}[IR_{T_{1}:T_{12},k}]$, the outcome in terms of top rank is still far from certain and is still significantly influenced by luck, even when measured over the span of one year.
+This demonstrates that, even with substantially better $\mathbb{E}[IR_{T_{1}:T_{12},k}]$, the outcome in terms of top rank is still far from certain and is still significantly influenced by random variation, even when measured over the span of one year.
 
 \begin{table}[!htbp]
     \fontsize{5}{5}\selectfont
@@ -455,7 +477,7 @@ Altering the probability of securing the top rank by including assets with diffe
 While this strategy is theoretically applicable, we did not observe top-performing teams taking disproportionately long positions on assets with positively skewed returns or short positions on assets with negatively skewed returns (see Figure \ref{fig:submission_analysis_rank_skew} in \ref{appendix:auxiliary_results}), suggesting that this channel was likely of limited importance.
 
 Instead, we focus on the importance of the correlation of returns from different investment strategies \citep[see, e.g.,][]{niekenRisktakingTournamentsTheory2010,krasnyAssetPricingStatus2011}, which can be, to some extent, regulated by the proportion of long vs. short positions in one's portfolio, as teams in M6 predominantly opted for long positions.
-To explore how such a strategic approach might look and to what degree it might be beneficial, we derive the optimal strategy for maximizing the probability of securing the desired rank in a stylized environment under assumptions A1 and A2.
+To explore how such a strategic approach might look and to what degree it might be beneficial, we derive the optimal strategy to maximize the probability of securing the desired rank in a stylized environment under assumptions A1 and A2.
 
 \subsection{Optimal Strategic Portfolio}\label{subsection:strategic_portfolio}
 
@@ -504,7 +526,7 @@ Similarly as in the case of the benchmark portfolio, we restrict the portfolio w
         -0.01  & \beta^{-}(\Delta_{m},m)*I\, \text{ times}. \\
     \end{cases}
 \end{equation}
-The crucial difference here is that $\beta^{+}(\Delta_{m},m)$ is now a function of the distance to the $q$-th ranking team and the current submission $m$, thus allowing one to strategically alter the proportion of short positions in the portfolio to improve one's probability of attaining the desired rank.\footnote{
+The crucial difference here is that $\beta^{+}(\Delta_{m},m)$ is now a function of the distance to the $q$-th ranking team and the current submission $m$, thus allowing one to strategically adjust the proportion of short positions in the portfolio to improve one's probability of attaining the desired rank.\footnote{
     We consider only positions $-0.01$ and $0.01$ as the presence of zero positions seems to alter the distribution of $IR_{T_{m},k}$, and even more importantly, the distribution of $IR_{T_{m},k}$ relative to $IR_{T_{m},k'}$ of the baseline portfolio, only very little, due to the normalization in Eq. \ref{eq:ir_definition} (see Fig. \ref{fig:position_effects} in \ref{appendix:auxiliary_results}).
 }
 
@@ -550,7 +572,7 @@ We set $K=163$, out of which $162$ teams utilize a bootstrapped portfolio.
 The portfolio weights $w_{:,m,k}$ of this bootstrapped portfolio are drawn randomly (with replacement) from the $w_{:,m,k}$ submitted by teams for the corresponding submission interval $m$.
 The remaining team uses the rank optimization portfolio with $q\in\{1,20\}$ or the bootstrapped portfolio for comparison.
 This approach allows us to completely dispense with assumptions A1 and A2 when evaluating the performance of the rank optimization strategy.
-However, the drawback is that the 12 4-week submission intervals are unlikely to be representative of the distribution of returns at large.
+However, the drawback is that the 12 four-week submission intervals are unlikely to be representative of the distribution of returns at large.
 As a result, the obtained success rates might be affected by idiosyncrasies observed during this period, and the estimates of $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ are likely to be unreliable.
 
 Table \ref{tab:state_table} displays $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ and the probability of securing at least rank $q$ for $q \in \{1,\,5,\,10,\,20\}$ when simulating the competition under A1' and A2.
@@ -560,6 +582,7 @@ Here, the probability of securing the desired rank $q$ when specially optimizing
     Relative to the $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ of the equal-weighted long portfolio tangency with $\lambda = 0$ that serves as a proxy for market returns.
 }
 The benefit is less substantial for $q=20$, indicating that the importance of strategic considerations decreases for less extreme ranks.
+To assess the robustness of these results, we repeat the analysis using more realistic return-generating processes that incorporate clustered volatility and heavy tails, which yield similar outcomes (see Tables \ref{tab:state_table_sensitivity_1}, \ref{tab:state_table_sensitivity_2}, \ref{tab:state_table_sensitivity_3} in \ref{appendix:sensitivity_analysis}).
 
 \begin{table}[!htbp]
     \fontsize{5}{5}\selectfont
@@ -664,7 +687,7 @@ This relationship is stronger for earlier submissions, which is a consequence of
 \end{figure}
 
 Considering Figures \ref{fig:submission_analysis_long} and \ref{fig:submission_analysis_long_rank_diff} and the simulation results in the theoretical part of this section, one would expect both the best and worst ranking teams to exhibit below-average $\beta^{+}_{m,k}$.
-Figure \ref{fig:submission_analysis_rank_long} displays the average $\bar{\beta}^{+}_{m,k}$; $\bar{\beta}^{+}_{\cdot,k}$ in the given quarter and globaly as a function of the attained rank in that period.
+Figure \ref{fig:submission_analysis_rank_long} displays the average $\bar{\beta}^{+}_{m,k}$; $\bar{\beta}^{+}_{\cdot,k}$ in the given quarter and globally as a function of the attained rank in that period.
 Across all quarters and also globally, $\bar{\beta}^{+}_{\cdot,k}$ follows a characteristic inverted ``u'' shape relationship with teams with low $\bar{\beta}^{+}_{\cdot,k}$ being disproportionately represented on either tail of the leaderboard, exactly as predicted.
 
 \begin{figure}[!htbp]
@@ -677,7 +700,7 @@ Across all quarters and also globally, $\bar{\beta}^{+}_{\cdot,k}$ follows a cha
 \end{figure}
 
 Table \ref{tab:submission_analysis_median_prob} displays probabilities of attaining rank at least $5$ and $10$ in individual quarters and globally separately for teams with $\bar{\beta}^{+}_{\cdot,k}$ below and above the median $\tilde{\bar{\beta}}^{+}_{\cdot} = q_{0.5}(\bar{\beta}^{+}_{\cdot, :})$ of the respective period.
-Teams with below-median $\bar{\beta}^{+}_{\cdot,k}$ are approximately 10 times more likely to secure one of the top 10 positions relative to teams with above-median $\bar{\beta}^{+}_{\cdot,k}$.
+Teams with below-median $\bar{\beta}^{+}_{\cdot,k}$ are approximately 8 times more likely to secure one of the top 10 positions in the global ranking relative to teams with above-median $\bar{\beta}^{+}_{\cdot,k}$.
 This disparity is even more pronounced when focusing on the top 5 leaderboard positions. 
 Out of 25 top-5 positions across quarters and globally, only a single one of them is achieved by a team with an above-median $\bar{\beta}^{+}_{\cdot,k}$.
 
@@ -713,52 +736,54 @@ As demonstrated by column $IR_{M6\_dummy}$ of Table \ref{tab:submission_analysis
 
 \section{Discussion \& Conclusions}\label{section:conclusions}
 
-
 To assess the extent to which rankings can be attributed to luck, we employed the WYY test of \citet{wrightTestEqualityMultiple2014} of equality of expected Sharpe ratios across multiple portfolios. 
-While the canonical WYY test with analytical critical values tends to over-reject when applied to a large number of teams over the span of a single year, these finite sample distortions can be mitigated by replacing the critical values with bootstrap counterparts.
+While the canonical WYY test with analytical critical values tends to over-reject when applied to a large number of teams over the course of a single year, these finite-sample distortions can be mitigated by using bootstrap-based critical values instead. 
 Applying the WYY test with bootstrap critical values to the portfolio weights submitted by teams yields a p-value of $0.926$, indicating that Sharpe ratios as extreme as those observed in the competition are still compatible with the null hypothesis that none of the teams are capable of consistently outperforming the benchmark, thus not indicative of a violation of the EMH.
 
 This conclusion is corroborated by analyzing directly the stylized model of the competition.
-Even when teams submit their portfolios completely at random, one observes equally extreme tail behavior, with the top 1\% of teams achieving an average Sharpe ratio of $29.82$ with a standard deviation of $3.32$, which indeed encompasses the actual observed 99th quantile of Sharpe ratios, $26.22$.
+Even when teams submit their portfolios completely at random, one observes equally extreme tail behavior: the top 1\% of teams in the simulation achieve a Sharpe ratio of $29.82$ on average, with a standard deviation of $3.32$, encompassing the actual observed 99th quantile of $26.22$.
 
-In the second part of the article, we focus on the strategic aspects of the investment challenge arising from the nonlinear reward structure and the adversarial nature of the challenge. 
-To assess the benefits of properly accounting for these aspects, we formulate the problem of optimizing directly for the probability of securing a desired rank (rather than maximizing expected Sharpe ratio) as a dynamic programming problem and numerically solve it using the stylized model of the competition.
+In the second part of the article, we focus on the strategic aspects of the investment challenge, which arise from its nonlinear reward structure and adversarial nature. 
+To assess the benefits of explicitly accounting for these factors, we formulate the problem of maximizing the probability of attaining a desired rank (rather than maximizing expected Sharpe ratio) as a dynamic programming problem and solve it numerically using the stylized model of the competition.
 The optimal rank-optimization portfolio strategy relies heavily on short positions in order to differentiate one's submissions from the predominantly long positions of other teams, and does so more aggressively when one ranks poorly in order to attempt to recover from otherwise hopeless positions.
 
-By employing such a strategy, a team can measurably improve chances of securing a good rank.
+By employing such a strategy, a team can measurably improve its chances of securing a good rank.
 Interestingly, these improved probabilities come at the cost of poor expected Sharpe ratios and a disproportionally high probability of placing at the very bottom of the leaderboard, demonstrating that the task of maximizing the expected Sharpe ratio is not necessarily identical to the task of attaining the top rank in the investment challenge.
-In the stylized model, the probability of securing the top rank when optimizing directly for it is comparable to that of a team who consistently achieves almost double the market returns. 
-To ensure robustness, we also allow the proposed rank optimization portfolio to compete in a bootstrap environment where asset returns and submissions of teams were resampled from those submitted in the M6. 
-Here, the success rate is even higher, indicating that the good performance is not an artifact of the simplifying assumptions made to construct the stylized model.
+In the stylized model, the probability of securing first place by optimizing specifically for it is comparable to that of a team consistently achieving nearly double the market’s returns.
 
-The analysis of portfolio weights submitted by teams participating in the M6 aligns with the stylized facts observed in our simulations and bootstrap exercises. 
-A high proportion of short positions is associated with a disproportionately high probability of securing both extremely good and extremely poor ranks. 
+It is important to emphasize that, unlike the first part of our analysis—where the test is conducted free of auxiliary assumptions—the simulation exercise exploring strategic considerations depends on the assumptions embedded in our stylized model.
+To gauge robustness, we run the analysis with more realistic data-generating processes and also pit the rank-optimization portfolio against a bootstrap setting, wherein both asset returns and team submissions from M6 are resampled.
+Although these additional exercises yield broadly consistent results, our conclusions still rest on the framework’s inherent simplifications. 
+Consequently, we cannot conclusively pinpoint the extent to which teams employed strategic considerations, nor can we precisely quantify the benefits of such behavior in M6. 
+Instead, this part of our analysis should be interpreted primarily as a conceptual illustration of the mechanisms at play, rather than an attempt at definitive quantification of their real-world impact.
+
+Despite these caveats, the analysis of portfolio weights submitted by teams in the M6 aligns with the stylized facts observed in our simulations and bootstrap exercises. 
+A high proportion of short positions is associated with a disproportionately high probability of securing both extremely good and extremely poor ranks.
 This observation is even more pronounced when focusing solely on the top-performing teams.
-Teams with below-median proportions of long positions are approximately 10 times as likely to secure one of the top 10 ranks in quarterly rankings and the global ranking. 
+Teams with below median proportions of long positions were approximately 8 times as likely to secure one of the top 10 ranks in the global ranking.
 Out of 25 teams who secured top 5 ranks in either quarterly or global rankings, only one of them did so with an above-median proportion of long positions.
-
-Clearly, this analysis merely demonstrates that teams could have benefited from recognizing the adversarial nature of the competition, not necessarily that they deliberately did so.
-However, descriptions of strategies provided by top-ranking teams suggest that many were indeed aware of the strategic aspects of the competition and incorporated them into their decision-making, often in ways more complex than the inevitably simplified variant analyzed in this article. 
+Descriptions of strategies provided by top-ranking teams suggest that at least some indeed recognized the competition's strategic aspects and incorporated them into their decision-making, often in ways more nuanced than the simplified variants analyzed here.
 Miguel Perez Michaus, who ranked close second in the duathlon challenge and likely missed the first place by a stroke of luck, states:
 \begin{quote}
     I mainly used risk expansion/contraction to maximize my chances for the duathlon prize given a solid forecasting score.
     Depending on market conditions and leaderboard projections I made discretionary use of risk neutral positioning (short SHY / long IEF) marginally benefiting from curve inversion while near-zero volatile, long only positioning, index shorting and volatility based stock selection,...\citep{michausFinQBoostMachineLearning2023}
 \end{quote}
-Similarly, Shrish, who ranked first in the 4th quarter of the forecasting challenge, emphasized the goal of optimizing decisions to attain a certain rank rather than absolute performance, albeit in the context of the forecasting challenge:
-\begin{quote}
-    I submitted a baseline forecast for the last month of the quarter to limit the RPS score to 0.16. 
-    As a result, my average RPS score was 0.15370, which was satisfactory based on historical data from previous quarters, and gave me a good chance of winning. \citep{shrishWinning6000Few2023}
-\end{quote}
-Such behavior among teams is not necessarily motivated by mercenary motives of maximizing expected monetary payoff, but can equally be driven simply by the intrinsic desire to win. 
-This is demonstrated by \citet{dijkRankMattersImpact2014}, who show that such behavior arises to the same degree even in the absence of monetary rewards, purely because of social competition. 
-Consequently, even more equitably distributed prizes would likely not mitigate these incentives.
 
-It must be stressed that this analysis, by its very construction, cannot make claims about how individual teams achieved their results or downplay the excellent Sharpe ratios they attained.
-Nor can it rule out with certainty the possibility that some teams might indeed be capable of consistently outperforming the benchmark.
-It merely shows that, taking the results of the investment challenge as a whole, there does not appear to be sufficient evidence to suggest that the extreme Sharpe ratios observed are beyond what one would expect given the large number of teams competing in M6.
+The broader implications of the findings in Section 4 add to a significant body of research on the risks of misaligned incentives in portfolio construction. 
+When rewards are tied to relative performance rather than absolute returns, the optimal behavior can diverge markedly from that of a fiduciary manager, leading to outcomes that are suboptimal with respect to the ranking metric. 
+Such misalignment can be partially addressed by rewarding consistency over time (as seen with M6’s quarterly prizes) or by concealing relative rankings to limit the effectiveness of adversarial portfolio strategies.
+
+Flatter, more equitable reward schemes may offer the most straightforward way to curb incentives for strategic behavior.
+Simulations of the stylized model illustrate this point: optimizing for first place roughly quadruples the probability of ending up in that position compared to a baseline, whereas optimizing for 20th yields a far more modest (roughly 20\%) gain.
+However, in the context of M6, where the competition’s prestige and reputation among practitioners and researchers are significant, it is likely that participants were driven more by the intrinsic motivation to win than by financial incentives. 
+As such, even more evenly distributed prizes would likely fail to fully counteract these non-monetary incentives.
+This view is consistent with \citet{dijkRankMattersImpact2014}, who show that similar behavior emerges even in the absence of monetary rewards, purely as a result of social competition.
+
+Overall, it must be stressed that this analysis cannot, by its construction, make claims about how individual teams achieved their results, nor can it rule out the possibility that some teams might indeed be capable of consistently outperforming the benchmark.
+It merely demonstrates that, taken as a whole, the final results of the investment challenge do not suggest that such extreme Sharpe ratios lie beyond what would be expected, given the large number of competing teams.
 Thus, they should not be interpreted as evidence against the EMH.
 We recommend exercising caution in placing undue focus solely on solutions from top-performing teams as those, by definition, might be more fortunate than others and might be more likely to utilize strategies which lead to increased probabilities of attaining extreme ranks.
-Instead, a more holistic approach focusing on how different factors affect performance across the entire leaderboard might be preferred.
+A more holistic view, examining how various factors shape performance across the entire leaderboard, might be preferable.
 
 \bibliographystyle{elsarticle-harv}\biboptions{authoryear}
 \bibliography{Library.bib}
@@ -811,7 +836,7 @@ and with
 estimated by repeatedly drawing $\tilde{w}_{:,m,:}$ under $\theta$ via Eq. \ref{eq:baseline_portfolio}.
 The estimation itself is performed by minimizing
 \begin{equation}
-    \left(\dfrac{1}{12}\sum_{m=1}^{12}g(\mathcal{D}_{m},\theta)\right)' W \left(\dfrac{1}{12}\sum_{m=1}^{12}g(\mathcal{D}_{m},\theta)\right)
+    \left(\dfrac{1}{12}\sum_{m=1}^{12}g(\mathcal{D}_{m},\theta)\right)^{\top} W \left(\dfrac{1}{12}\sum_{m=1}^{12}g(\mathcal{D}_{m},\theta)\right)
 \end{equation}
 through an exhaustive search over $\{n_{+1}, n_{0}, n_{-1}|n_{+1}+n_{0}+n_{-1}=100, n_{0} \neq 100\}$.
 The weighting matrix is assumed to be an identity matrix because the moments are already standardized.
@@ -850,5 +875,223 @@ The weighting matrix is assumed to be an identity matrix because the moments are
     }
     \label{fig:submission_analysis_rank_skew}
 \end{figure}
+
+\section{Sensitivity Analysis}\label{appendix:sensitivity_analysis}
+
+Admittedly, the data-generating process postulated in A1 (and A1') is quite simplistic and does not account for well-documented stylized facts of financial markets, such as heavy-tailed return distributions and temporal dependence.
+To gauge the sensitivity of our results to these simplifying assumptions, we repeat the analysis under a more realistic data-generating process, where the returns $r_{:,t}$ (and $r_{:,t}^{u}$ in the case of A1') follow a scalar BEKK model \citep{engleMultivariateSimultaneousGeneralized1995} with $t$-distributed innovations:
+\begin{equation}
+    r_{:,t} \sim t_{\nu}\left(\delta, \dfrac{\nu}{\nu-2} H_{t}\right),
+\end{equation}
+\begin{equation}
+    H_{t} = C + \alpha (r_{:,t-1}-\delta)*(r_{:,t-1}-\delta)^{\top}+\beta H_{t-1},
+\end{equation}
+with $C=(1-\alpha-\beta)\,\Sigma_{r}$ and $\delta = \vec{\mu}_{r}$. 
+This specification nests A1 as a special case ($\alpha=\beta=0$, $\nu\to\infty$) and allows us to repeat the analysis with varying degrees of heavy-tailedness and conditional heteroskedasticity. 
+We consider the following scenarios:
+\begin{itemize}
+    \item[A1-a] - \emph{Heavy Tails:}
+    \begin{equation}
+        \{\alpha = 0, \, \beta = 0, \, \nu = 6\}
+    \end{equation}
+    \item[A1-b] - \emph{Conditional Heteroskedasticity:}
+    \begin{equation}
+        \{\alpha = 0.1, \, \beta = 0.85, \, \nu \to \infty\}
+    \end{equation}
+    \item[A1-c] - \emph{Heavy Tails \& Conditional Heteroskedasticity:}
+    \begin{equation}
+        \{\alpha = 0.1, \, \beta = 0.85, \, \nu = 6\}
+    \end{equation}
+\end{itemize}
+
+Tables \ref{tab:combined_rejection_rates_sensitivity_1}, \ref{tab:combined_rejection_rates_sensitivity_2}, and \ref{tab:combined_rejection_rates_sensitivity_3} show the rejection rates of the WYY test with asymptotic and bootstrapped critical values for scenarios A1-a, A1-b, and A1-c. 
+Introducing heavy-tailed returns and conditional heteroskedasticity exacerbates the small-sample level distortions of the WYY test with asymptotic critical values. 
+By contrast, the WYY test variant with bootstrapped critical values remains correctly sized even in these scenarios.
+
+\begin{table}[!htbp]
+    \centering
+    \fontsize{5}{5}\selectfont 
+    \begin{subtable}{.5\linewidth} 
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_asy_sensitivity_1.csv}
+        \caption{WYY (asy.)}
+        \label{tab:test_IR_level_table_asy_sensitivity_1}
+    \end{subtable}%
+    \begin{subtable}{.5\linewidth}
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_wb_sensitivity_1.csv}
+        \caption{WYY (w.b.)}
+        \label{tab:test_IR_level_table_wb_sensitivity_1}
+    \end{subtable}
+    \caption{Rejection Rates of WYY Tests under A1-a\\
+    }
+    \label{tab:combined_rejection_rates_sensitivity_1}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \fontsize{5}{5}\selectfont 
+    \begin{subtable}{.5\linewidth} 
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_asy_sensitivity_2.csv}
+        \caption{WYY (asy.)}
+        \label{tab:test_IR_level_table_asy_sensitivity_2}
+    \end{subtable}%
+    \begin{subtable}{.5\linewidth}
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_wb_sensitivity_2.csv}
+        \caption{WYY (w.b.)}
+        \label{tab:test_IR_level_table_wb_sensitivity_2}
+    \end{subtable}
+    \caption{Rejection Rates of WYY Tests under A1-b\\
+    }
+    \label{tab:combined_rejection_rates_sensitivity_2}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \fontsize{5}{5}\selectfont 
+    \begin{subtable}{.5\linewidth} 
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_asy_sensitivity_3.csv}
+        \caption{WYY (asy.)}
+        \label{tab:test_IR_level_table_asy_sensitivity_3}
+    \end{subtable}%
+    \begin{subtable}{.5\linewidth}
+        \centering
+        \pgfplotstabletypeset[
+        col sep = comma,
+        ignore chars={"},
+        every head row/.style={before row={\toprule}, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        display columns/0/.style={string type, column name={$\alpha$}},
+        display columns/1/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=5$}},
+        display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=50$}},
+        display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$K=163$}}
+        ]{../../outputs/tables/test_IR_level_table_wb_sensitivity_3.csv}
+        \caption{WYY (w.b.)}
+        \label{tab:test_IR_level_table_wb_sensitivity_3}
+    \end{subtable}
+    \caption{Rejection Rates of WYY Tests under A1-c\\
+    }
+    \label{tab:combined_rejection_rates_sensitivity_3}
+\end{table}
+
+Tables \ref{tab:state_table_sensitivity_1}, \ref{tab:state_table_sensitivity_2}, and \ref{tab:state_table_sensitivity_3} present $\mathbb{E}[IR_{T_{1}:T_{12},k}]$ and the probability of securing a rank $q \in \{1,\,5,\,10,\,20\}$ when simulating the competition under A1'-a/A1'-b/A1'-c and A2. 
+The results closely resemble those in Table~\ref{tab:state_table}, indicating that our main conclusions remain robust to introducing heavy-tailed distributions and conditional heteroskedasticity.
+
+\begin{table}[!htbp]
+    \fontsize{5}{5}\selectfont
+    \centering
+    \pgfplotstabletypeset[
+    col sep = comma,
+    ignore chars={"},
+    every head row/.style={before row={%
+    \toprule
+    \multicolumn{11}{c}{\hspace{142pt} $ P(rank_{T_{1}:T_{12},k}\leq q)  $}\\
+    },after row=\midrule},
+    every last row/.style={after row=\bottomrule},
+    display columns/0/.style={string type, column name={portfolio}},
+    display columns/1/.style={dec sep align, precision = 2, fixed, fixed zerofill=true, column name={$\mathbb{E}[IR_{T_{1}:T_{12}}]$}},
+    display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$\mathbb{E}[\beta^{+}_{m}]$}},
+    display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 1$}},
+    display columns/4/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 5$}},
+    display columns/5/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 10$}},
+    display columns/6/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 20$}}
+    ]{../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_1.csv}
+    \caption{Comparison of Performance (Simulated under A1-a)}
+    \label{tab:state_table_sensitivity_1}
+\end{table}
+
+\begin{table}[!htbp]
+    \fontsize{5}{5}\selectfont
+    \centering
+    \pgfplotstabletypeset[
+    col sep = comma,
+    ignore chars={"},
+    every head row/.style={before row={%
+    \toprule
+    \multicolumn{11}{c}{\hspace{142pt} $ P(rank_{T_{1}:T_{12},k}\leq q)  $}\\
+    },after row=\midrule},
+    every last row/.style={after row=\bottomrule},
+    display columns/0/.style={string type, column name={portfolio}},
+    display columns/1/.style={dec sep align, precision = 2, fixed, fixed zerofill=true, column name={$\mathbb{E}[IR_{T_{1}:T_{12}}]$}},
+    display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$\mathbb{E}[\beta^{+}_{m}]$}},
+    display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 1$}},
+    display columns/4/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 5$}},
+    display columns/5/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 10$}},
+    display columns/6/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 20$}}
+    ]{../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_2.csv}
+    \caption{Comparison of Performance (Simulated under A1-b)}
+    \label{tab:state_table_sensitivity_2}
+\end{table}
+
+\begin{table}[!htbp]
+    \fontsize{5}{5}\selectfont
+    \centering
+    \pgfplotstabletypeset[
+    col sep = comma,
+    ignore chars={"},
+    every head row/.style={before row={%
+    \toprule
+    \multicolumn{11}{c}{\hspace{142pt} $ P(rank_{T_{1}:T_{12},k}\leq q)  $}\\
+    },after row=\midrule},
+    every last row/.style={after row=\bottomrule},
+    display columns/0/.style={string type, column name={portfolio}},
+    display columns/1/.style={dec sep align, precision = 2, fixed, fixed zerofill=true, column name={$\mathbb{E}[IR_{T_{1}:T_{12}}]$}},
+    display columns/2/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$\mathbb{E}[\beta^{+}_{m}]$}},
+    display columns/3/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 1$}},
+    display columns/4/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 5$}},
+    display columns/5/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 10$}},
+    display columns/6/.style={dec sep align, precision = 3, fixed, fixed zerofill=true, column name={$ q = 20$}}
+    ]{../../outputs/tables/state_table_simulated_rank_optimization_sensitivity_3.csv}
+    \caption{Comparison of Performance (Simulated under A1-c)}
+    \label{tab:state_table_sensitivity_3}
+\end{table}
 
 \end{document}

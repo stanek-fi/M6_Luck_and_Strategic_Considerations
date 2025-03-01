@@ -52,6 +52,15 @@
   \bibinfo{pages}{779--804}.
 \newblock \DOIprefix\doi{10.1111/1540-6261.00545}.
 %Type = Article
+\bibitem[{Engle and
+  Kroner(1995)}]{engleMultivariateSimultaneousGeneralized1995}
+\bibinfo{author}{Engle, R.F.}, \bibinfo{author}{Kroner, K.F.},
+  \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{Multivariate {{Simultaneous Generalized Arch}}}.
+\newblock \bibinfo{journal}{Econometric Theory} \bibinfo{volume}{11},
+  \bibinfo{pages}{122--150}.
+\newblock \href{http://arxiv.org/abs/3532933}{{\tt arXiv:3532933}}.
+%Type = Article
 \bibitem[{Jobson and Korkie(1981)}]{jobsonPerformanceHypothesisTesting1981}
 \bibinfo{author}{Jobson, J.D.}, \bibinfo{author}{Korkie, B.M.},
   \bibinfo{year}{1981}.
@@ -171,10 +180,6 @@
 \newblock \bibinfo{title}{Multivariate {{Observations}}}.
 \newblock \bibinfo{edition}{1st edition} ed., \bibinfo{publisher}{{Wiley}},
   \bibinfo{address}{{New York}}.
-%Type = Misc
-\bibitem[{Shrish(2023)}]{shrishWinning6000Few2023}
-\bibinfo{author}{Shrish}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Winning 6000\$ with a few lines of code}.
 %Type = Misc
 \bibitem[{Webster(2023)}]{webster500Returns19302023}
 \bibinfo{author}{Webster, I.}, \bibinfo{year}{2023}.
